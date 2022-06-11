@@ -1,6 +1,7 @@
 {
   "salons": [
     {
+      "service": "hair",
       "name": "Salon name",
       "reviews": { "stars": 4, "totalReviews": 5 },
       "address": { "street": "", "streetNumber": "", "city": "Stockholm" },
@@ -20,6 +21,27 @@
       "availableTimeSlots": [{ "time": "12.00", "length": 30, "price": 45 }]
     },
     {
+      "service": "hair",
+      "name": "Salon name",
+      "reviews": { "stars": 4, "totalReviews": 5 },
+      "address": { "street": "", "streetNumber": "", "city": "Stockholm" },
+      "phone": "",
+      "website": "",
+      "description": "",
+      "img": "",
+      "openingHours": [
+        { "day": 1, "closes": "19.00" },
+        { "day": 2, "closes": "19.00" },
+        { "day": 3, "closes": "19.00" },
+        { "day": 4, "closes": "19.00" },
+        { "day": 5, "closes": "19.00" },
+        { "day": 6, "closes": "15.00" },
+        { "day": 7, "closes": "14.00" }
+      ],
+      "availableTimeSlots": [{ "time": "12.00", "length": 30, "price": 45 }]
+    },
+    {
+      "service": "nails",
       "name": "Salon name",
       "reviews": { "stars": 4, "totalReviews": 5 },
       "address": { "street": "", "streetNumber": "", "city": "Stockholm" },
