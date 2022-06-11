@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { ListView } from "../../Components";
 
 // This page should import the ListView an fill it with data based on url param
 const SpecificServicePage = () => {
@@ -29,11 +30,13 @@ const SpecificServicePage = () => {
   }, [params]);
 
   return (
-    <ul>
-      {salons.map((salon, index) => {
-        return <li key={index}>{salon.service}</li>;
-      })}
-    </ul>
+    <>
+      {salons.length > 0 ? (
+        <ListView service={params.service} salons={salons} />
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 

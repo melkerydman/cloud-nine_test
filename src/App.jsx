@@ -8,7 +8,6 @@ const App = () => {
       <Routes>
         <Route path="/services/:service" element={<SpecificServicePage />} />
       </Routes>
-      <h1>Hello world</h1>
     </div>
   );
 };
