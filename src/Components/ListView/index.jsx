@@ -1,19 +1,23 @@
 import React from "react";
+import { ListItem, H3 } from "../../Components";
 
 // Gonna take service type (i.e. hair) and array of salons as prop
-const ListView = ({ service, salons }) => {
+const ListView = ({ timeSlots }) => {
+  console.log("timeSlots from listview:", timeSlots);
+
+  const serviceType = timeSlots[0].salon.service;
   return (
     <>
       <header>
         <div>icon</div>
-        <h1>{service}</h1>
+        <H3>{serviceType}</H3>
         <div>Filter icon</div>
       </header>
       <main>
         <div>filter</div>
         <ul>
-          {salons.map((salon, index) => (
-            <li key={index}>{salon.name}</li>
+          {timeSlots.map((timeSlot, index) => (
+            <ListItem key={index} timeSlot={timeSlot} />
           ))}
         </ul>
       </main>

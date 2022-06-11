@@ -1,12 +1,14 @@
 import "./App.css";
-import { SpecificServicePage } from "./Pages";
 import { Route, Routes } from "react-router-dom";
+import GlobalStyle from "./GlobalStyles";
+import { ServicePage } from "./Pages";
 
 const App = () => {
   return (
     <div className="App">
+      <GlobalStyle />
       <Routes>
-        <Route path="/services/:service" element={<SpecificServicePage />} />
+        <Route path="/services/:service" element={<ServicePage />} />
       </Routes>
     </div>
   );

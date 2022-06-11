@@ -1,1 +1,1 @@
-export { default as SpecificServicePage } from "./SpecificServicePage";
+export { default as ServicePage } from "./ServicePage";

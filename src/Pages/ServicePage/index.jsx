@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import { ListView } from "../../Components";
 
 // This page should import the ListView an fill it with data based on url param
-const SpecificServicePage = () => {
+const ServicePage = () => {
   const [salons, setSalons] = useState([]);
+  const [timeSlots, setTimeSlots] = useState([]);
   const params = useParams();
 
   useEffect(() => {
@@ -29,15 +30,27 @@ const SpecificServicePage = () => {
     getSalons();
   }, [params]);
 
+  useEffect(() => {
+    setTimeSlots([]);
+    salons.forEach((salon) => {
+      const timeSlots = salon.availableTimeSlots;
+      timeSlots.forEach((timeSlot) => {
+        setTimeSlots((prevTimeSlots) => [
+          ...prevTimeSlots,
+          {
+            salon: salon,
+            time: timeSlot.time,
+            duration: timeSlot.duration,
+            price: timeSlot.price,
+          },
+        ]);
+      });
+    });
+  }, [salons]);
+  console.log(timeSlots);
   return (
-    <>
-      {salons.length > 0 ? (
-        <ListView service={params.service} salons={salons} />
-      ) : (
-        <></>
-      )}
-    </>
+    <>{timeSlots.length > 0 ? <ListView timeSlots={timeSlots} /> : <></>}</>
   );
 };
 
-export default SpecificServicePage;
+export default ServicePage;
