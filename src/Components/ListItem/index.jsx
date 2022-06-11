@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, H4, P1, P2, P3 } from "../../Components";
+import { Flex, H4, P1, P2, P3, Icon } from "../../Components";
 import { StyledListItem } from "./styled";
 
 const ListItem = ({ timeSlot }) => {
@@ -10,7 +10,7 @@ const ListItem = ({ timeSlot }) => {
       <Flex column flex>
         <H4>{timeSlot.salon.name}</H4>
         <Flex>
-          <div>stars</div>
+          <div style={{ display: "flex" }}>stars</div>
           <P3>(21)</P3>
         </Flex>
         <P1>{timeSlot.salon.address.street}</P1>
@@ -19,7 +19,7 @@ const ListItem = ({ timeSlot }) => {
         <P1 bold>${timeSlot.price}</P1>
         <P2>{timeSlot.duration} min</P2>
       </Flex>
-      <div>icon</div>
+      <Icon color="var(--clr-accent)" size="16" icon="chevron_right" />
     </StyledListItem>
   );
 };
