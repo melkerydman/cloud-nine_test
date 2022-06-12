@@ -1,5 +1,5 @@
 import React from "react";
-import { ListItem, H3, Flex, Icon } from "../../Components";
+import { ListItem, H3, Flex, Icon, Filter } from "../../Components";
 
 const ListView = ({ timeSlots }) => {
   const serviceType = timeSlots[0].salon.service;
@@ -14,7 +14,7 @@ const ListView = ({ timeSlots }) => {
         </Flex>
       </header>
       <main>
-        <div>filter</div>
+        <Filter></Filter>
         <ul>
           {timeSlots.map((timeSlot, index) => (
             <ListItem key={index} timeSlot={timeSlot} />
