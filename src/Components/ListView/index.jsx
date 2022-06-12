@@ -1,17 +1,17 @@
 import React from "react";
-import { ListItem, H3 } from "../../Components";
+import { ListItem, H3, Flex, Icon } from "../../Components";
 
-// Gonna take service type (i.e. hair) and array of salons as prop
 const ListView = ({ timeSlots }) => {
-  console.log("timeSlots from listview:", timeSlots);
-
   const serviceType = timeSlots[0].salon.service;
+
   return (
     <>
-      <header>
-        <div>icon</div>
-        <H3>{serviceType}</H3>
-        <div>Filter icon</div>
+      <header style={{ padding: "var(--gutter-md)" }}>
+        <Flex style={{ justifyContent: "space-between" }}>
+          <Icon icon="chevron_left" size="24" color="var(--clr-accent)" />
+          <H3>{serviceType}</H3>
+          <Icon icon="settings" size="24" color="var(--clr-accent)" />
+        </Flex>
       </header>
       <main>
         <div>filter</div>
