@@ -8,6 +8,8 @@ import {
   Top,
   Container,
   Choice,
+  SalonHeader,
+  Button,
 } from "./styled";
 import Info from "./Item";
 
@@ -38,24 +40,11 @@ const SalonPage = () => {
   }, [params]);
 
   if (Object.keys(salon).length !== 0) {
-    console.log(salon);
     return (
       <Container>
-        <header
-          style={{
-            height: "200px",
-            paddingLeft: "var(--gutter-md)",
-            paddingRight: "var(--gutter-md)",
-            paddingTop: "var(--gutter-lg)",
-            paddingBottom: "var(--gutter-xl)",
-            backgroundImage: "url(/background.png)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
+        <SalonHeader>
           <Flex style={{ justifyContent: "space-between" }}>
-            <button
+            <Button
               onClick={() => {
                 navigate(-1);
               }}
@@ -65,16 +54,16 @@ const SalonPage = () => {
                 size="24"
                 color="var(--clr-white)"
               ></Icon>
-            </button>
-            <button>
+            </Button>
+            <Button>
               <Icon icon="heart" size="24" color="var(--clr-white)"></Icon>
-            </button>
+            </Button>
           </Flex>
           <Flex column>
             <H3 style={{ color: "var(--clr-white)" }}>{salon.name}</H3>
             <Review lg reviews={salon.reviews} />
           </Flex>
-        </header>
+        </SalonHeader>
         <Main>
           <Top>
             <Choice active>Info</Choice>
