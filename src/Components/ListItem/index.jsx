@@ -27,7 +27,7 @@ const ListItem = ({ timeSlot }) => {
   return (
     <StyledListItem
       onClick={() => {
-        navigate(`../salons/${timeSlot.salon.name}`, { replace: true });
+        navigate(`../salons/${timeSlot.salon.name}`);
       }}
     >
       <P1 bold>{timeSlot.time}</P1>

@@ -1,18 +1,17 @@
 # Cloud Nine - Technical test
 
-Code is running on https://cloudnine-melker.netlify.app/
+Code is running on https://cloudnine-melker.netlify.app
 
-### Important notes
+### Note
 
-Go to /services/hair to reach first page.
-URL - one letter is being removed from "hair" in url when clicking back from salon page which breaks link. You need to add that in manually to see page.
+Page is created for mobile screens :)
 
 ### Installation
 
 ```
 Clone project
 Run "npm install"
-Run "npm start" to start dev server
+Run "npm run start" to start dev server
 ```
 
 ### Some bugs and issues
