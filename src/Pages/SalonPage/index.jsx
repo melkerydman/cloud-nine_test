@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Flex, H3, Icon } from "../../Components";
+import { Flex, H3, Icon, Review } from "../../Components";
 
 const SalonPage = () => {
   const [salon, setSalon] = useState({});
@@ -27,41 +27,50 @@ const SalonPage = () => {
     };
     getSalon();
   }, [params]);
-  console.log(salon);
 
-  return (
-    <>
-      <header
-        style={{
-          height: "200px",
-          paddingLeft: "var(--gutter-md)",
-          paddingRight: "var(--gutter-md)",
-          paddingTop: "var(--gutter-lg)",
-          paddingBottom: "var(--gutter-xl)",
-          backgroundImage: "url(/background.png)",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Flex style={{ justifyContent: "space-between" }}>
-          <button
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            <Icon icon="chevron_left" size="24" color="var(--clr-white)"></Icon>
-          </button>
-          <button>
-            <Icon icon="heart" size="24" color="var(--clr-white)"></Icon>
-          </button>
-        </Flex>
-        <Flex column>
-          <H3 style={{ color: "var(--clr-white)" }}>{salon.name}</H3>
-        </Flex>
-      </header>
-    </>
-  );
+  if (Object.keys(salon).length !== 0) {
+    console.log(salon);
+    return (
+      <>
+        <header
+          style={{
+            height: "200px",
+            paddingLeft: "var(--gutter-md)",
+            paddingRight: "var(--gutter-md)",
+            paddingTop: "var(--gutter-lg)",
+            paddingBottom: "var(--gutter-xl)",
+            backgroundImage: "url(/background.png)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <Flex style={{ justifyContent: "space-between" }}>
+            <button
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              <Icon
+                icon="chevron_left"
+                size="24"
+                color="var(--clr-white)"
+              ></Icon>
+            </button>
+            <button>
+              <Icon icon="heart" size="24" color="var(--clr-white)"></Icon>
+            </button>
+          </Flex>
+          <Flex column>
+            <H3 style={{ color: "var(--clr-white)" }}>{salon.name}</H3>
+            <Review lg reviews={salon.reviews} />
+          </Flex>
+        </header>
+      </>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default SalonPage;

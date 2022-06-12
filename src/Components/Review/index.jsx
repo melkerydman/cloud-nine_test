@@ -1,8 +1,7 @@
 import { Icon, P2, P3 } from "../../Components";
-import { StyledReview } from "./styled";
+import { Stars, StyledReview } from "./styled";
 
 const Review = ({ lg, reviews }) => {
-  console.log("reviews", reviews);
   const stars = [];
   for (let i = 1; i < 6; i++) {
     if (i <= reviews.stars) {
@@ -31,15 +30,15 @@ const Review = ({ lg, reviews }) => {
   if (lg) {
     return (
       <StyledReview>
-        <div style={{ display: "flex" }}>{stars.map((star) => star)}</div>
-        <P2>{reviews.totalReviews}</P2>
+        <Stars>{stars.map((star) => star)}</Stars>
+        <P2 style={{ color: "var(--clr-white)" }}>{reviews.totalReviews}</P2>
       </StyledReview>
     );
   } else {
     return (
       // <StyledReview>Review</StyledReview>
       <StyledReview>
-        <div style={{ display: "flex" }}>{stars.map((star) => star)}</div>
+        <Stars style={{ display: "flex" }}>{stars.map((star) => star)}</Stars>
         <P3>{reviews.totalReviews}</P3>
       </StyledReview>
     );
