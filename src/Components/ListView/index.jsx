@@ -3,7 +3,7 @@ import { ListItem, H3, Flex, Icon, Filter } from "../../Components";
 
 const ListView = ({ timeSlots }) => {
   const serviceType = timeSlots[0].salon.service;
-  const [selectedOption, setSelectedOption] = useState({ from: 1, to: 15 });
+  const [selectedOption, setSelectedOption] = useState({ from: 1, to: 100 });
 
   // Update selected price range option
   const handleSelect = (option) => {
