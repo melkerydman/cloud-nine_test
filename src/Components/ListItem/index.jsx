@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, H4, P1, P2, P3, Icon } from "../../Components";
+import { Flex, H4, P1, P2, P3, Icon, Divider } from "../../Components";
 import { StyledListItem } from "./styled";
 
 const ListItem = ({ timeSlot }) => {
@@ -43,6 +43,7 @@ const ListItem = ({ timeSlot }) => {
         size="16"
         icon="chevron_right"
       />
+      <Divider />
     </StyledListItem>
   );
 };

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Flex, Icon } from "../../Components";
+import { Flex, Icon, Divider, P1, P2 } from "../../Components";
 import { Dropdown, DropdownOption } from "./styled";
-// import { Range } from "./styled";
 
 const Filter = ({ selectedOption, handleSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,12 +32,12 @@ const Filter = ({ selectedOption, handleSelect }) => {
           alignItems: "center",
         }}
       >
-        <Flex>
-          <div>
-            Price {console.log(selectedOption.from)}${selectedOption.from} - $
-            {selectedOption.to}
-          </div>
-        </Flex>
+        {/* <Flex> */}
+        <P1>
+          Price {console.log(selectedOption.from)}${selectedOption.from} - $
+          {selectedOption.to}
+        </P1>
+        {/* </Flex> */}
         <button
           style={{
             background: "transparent",
@@ -48,7 +47,11 @@ const Filter = ({ selectedOption, handleSelect }) => {
           }}
           onClick={handleOpen}
         >
-          <Icon icon="chevron_down" size="16" color="var(--clr-accent)" />
+          <Icon
+            icon={isOpen ? "chevron_up" : "chevron_down"}
+            size="16"
+            color="var(--clr-accent)"
+          />
         </button>
       </Flex>
       <Dropdown isOpen={isOpen}>
@@ -60,7 +63,10 @@ const Filter = ({ selectedOption, handleSelect }) => {
               handleOpen();
             }}
           >
-            {option.from}-{option.to}
+            <P2>
+              {option.from}-{option.to}
+            </P2>
+            <Divider style={{ width: "100%", left: "0" }} />
           </DropdownOption>
         ))}
       </Dropdown>

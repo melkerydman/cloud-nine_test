@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledListItem = styled.li`
+  position: relative;
   padding: 16px;
   display: flex;
   gap: var(--gutter-md);

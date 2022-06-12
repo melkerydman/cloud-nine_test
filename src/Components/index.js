@@ -8,3 +8,4 @@ export { default as P3 } from "./P3";
 export { default as Flex } from "./Flex";
 export { default as Icon } from "./Icon";
 export { default as Filter } from "./Filter";
+export { default as Divider } from "./Divider";
