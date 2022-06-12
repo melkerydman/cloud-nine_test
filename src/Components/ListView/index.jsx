@@ -31,9 +31,7 @@ const ListView = ({ timeSlots }) => {
               timeSlot.price <= selectedOption.to
             ) {
               return <ListItem key={index} timeSlot={timeSlot} />;
-            } else {
-              return <></>;
-            }
+            } else return "";
           })}
         </ul>
       </main>
