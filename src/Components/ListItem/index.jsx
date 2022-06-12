@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Flex, H4, P1, P2, P3, Icon, Divider } from "../../Components";
 import { StyledListItem } from "./styled";
 
 const ListItem = ({ timeSlot }) => {
+  const navigate = useNavigate();
   const stars = [];
   for (let i = 1; i < 6; i++) {
     if (i <= timeSlot.salon.reviews.stars) {
@@ -23,7 +25,11 @@ const ListItem = ({ timeSlot }) => {
     }
   }
   return (
-    <StyledListItem>
+    <StyledListItem
+      onClick={() => {
+        navigate(`../salons/${timeSlot.salon.name}`, { replace: true });
+      }}
+    >
       <P1 bold>{timeSlot.time}</P1>
       <Flex column flex>
         <H4>{timeSlot.salon.name}</H4>
