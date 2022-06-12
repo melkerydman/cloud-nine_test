@@ -64,7 +64,7 @@ const Filter = ({ selectedOption, handleSelect }) => {
             }}
           >
             <P2>
-              {option.from}-{option.to}
+              ${option.from}-${option.to}
             </P2>
             <Divider style={{ width: "100%", left: "0" }} />
           </DropdownOption>
