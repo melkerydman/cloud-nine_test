@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import GlobalStyle from "./GlobalStyles";
-import { ServicePage } from "./Pages";
+import { ServicePage, SalonPage } from "./Pages";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <GlobalStyle />
       <Routes>
         <Route path="/services/:service" element={<ServicePage />} />
+        <Route path="/salons/:name" element={<SalonPage />} />
       </Routes>
     </div>
   );
