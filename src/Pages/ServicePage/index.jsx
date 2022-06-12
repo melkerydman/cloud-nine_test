@@ -48,6 +48,7 @@ const ServicePage = () => {
     });
   }, [salons]);
   console.log(timeSlots);
+
   return (
     <>{timeSlots.length > 0 ? <ListView timeSlots={timeSlots} /> : <></>}</>
   );

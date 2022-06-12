@@ -1,8 +1,8 @@
 import { StyledFlex } from "./styled";
 
-const Flex = ({ column, flex, children }) => {
+const Flex = ({ style, column, flex, children }) => {
   return (
-    <StyledFlex column={column} flex={flex}>
+    <StyledFlex style={style} column={column} flex={flex}>
       {children}
     </StyledFlex>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import iconPath from "../../Assets/iconsLib";
 
-const Icon = ({ size, color, icon, stroke, strokeWidth }) => {
-  console.log(iconPath);
+const Icon = ({ style, size, color, icon, stroke, strokeWidth }) => {
   return (
     <svg
-      viewBox="0 0 24 24"
+      style={style}
+      viewBox={`0 0 ${size} ${size}`}
       width={`${size}px`}
       height={`${size}px`}
       xmlns="http://www.w3.org/2000/svg"
