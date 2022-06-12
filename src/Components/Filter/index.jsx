@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Flex, Icon } from "../../Components";
-import { Range } from "./styled";
+import { Dropdown, DropdownOption } from "./styled";
+// import { Range } from "./styled";
 
 const Filter = ({ selectedOption, handleSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +14,6 @@ const Filter = ({ selectedOption, handleSelect }) => {
     { from: 31, to: 45 },
     { from: 46, to: 60 },
   ];
-  // const [min, setMin] = useState();
-  // const [max, setMax] = useState();
 
   const handleOpen = () => {
     setIsOpen((prevState) => !prevState);
@@ -40,24 +39,31 @@ const Filter = ({ selectedOption, handleSelect }) => {
             {selectedOption.to}
           </div>
         </Flex>
-        <button onClick={handleOpen}>
+        <button
+          style={{
+            background: "transparent",
+            border: "none",
+            margin: "0",
+            padding: "0",
+          }}
+          onClick={handleOpen}
+        >
           <Icon icon="chevron_down" size="16" color="var(--clr-accent)" />
         </button>
       </Flex>
-      {options.map((option, index) => (
-        <div
-          key={index}
-          onClick={() => {
-            handleSelect(option);
-          }}
-        >
-          {option.from}-{option.to}
-        </div>
-      ))}
-      <Range isOpen={isOpen}>
-        <input type="number" placeholder="1" min="1" max="250" />
-        <input type="number" placeholder="250" />
-      </Range>
+      <Dropdown isOpen={isOpen}>
+        {options.map((option, index) => (
+          <DropdownOption
+            key={index}
+            onClick={() => {
+              handleSelect(option);
+              handleOpen();
+            }}
+          >
+            {option.from}-{option.to}
+          </DropdownOption>
+        ))}
+      </Dropdown>
     </div>
   );
 };
