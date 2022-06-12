@@ -9,8 +9,8 @@ export default createGlobalStyle`
 	--clr-accent: #B69F58;
 
 	// Font family
-	--ff-primary: ;
-	--ff-secondary: ;
+	--ff-primary: 'Roboto', sans-serif;;
+	--ff-secondary: "";
 
 	// Font size
 	--fs-h1: 32px;
@@ -40,5 +40,6 @@ export default createGlobalStyle`
 body {
 	background: var(--clr-white);
 	color: var(--clr-black);
+	font-family: var(--ff-primary)
 }
 `;

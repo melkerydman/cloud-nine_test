@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Flex, H3, Icon, Review } from "../../Components";
+import { Divider, Flex, H3, Icon, P1, Review } from "../../Components";
+import { InfoWrapper, Info, Description } from "./styled";
 
 const SalonPage = () => {
   const [salon, setSalon] = useState({});
@@ -31,7 +32,7 @@ const SalonPage = () => {
   if (Object.keys(salon).length !== 0) {
     console.log(salon);
     return (
-      <>
+      <div style={{ backgroundColor: "#F9F9F9" }}>
         <header
           style={{
             height: "200px",
@@ -66,7 +67,69 @@ const SalonPage = () => {
             <Review lg reviews={salon.reviews} />
           </Flex>
         </header>
-      </>
+        <main
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "var(--gutter-lg)",
+          }}
+        >
+          <header
+            style={{
+              backgroundColor: "var(--clr-white)",
+              display: "flex",
+              textAlign: "center",
+            }}
+          >
+            <div
+              style={{
+                padding: "var(--gutter-md)",
+                flex: "1",
+                borderBottom: "solid 2px var(--clr-accent)",
+              }}
+            >
+              Info
+            </div>
+            <div
+              style={{
+                padding: "var(--gutter-md)",
+                flex: "1",
+              }}
+            >
+              Schedule
+            </div>
+          </header>
+          <InfoWrapper>
+            <Info>
+              <Icon icon="chevron_left" size="16" color="var(--clr-accent)" />
+              <P1>
+                {salon.address.street}, {salon.address.postalCode}{" "}
+                {salon.address.city}
+              </P1>
+            </Info>
+            <Info>
+              <Icon icon="hours" size="16" color="var(--clr-accent)" />
+              <P1>Open until {salon.openingHours[0].closes} today</P1>
+              <Icon icon="chevron_down" size="16" color="var(--clr-accent)" />
+            </Info>
+            <Info>
+              <Icon icon="phone" size="16" color="var(--clr-accent)" />
+              <P1>{salon.phoneNumber}</P1>
+            </Info>
+            <Info>
+              <Icon icon="website" size="16" color="var(--clr-accent)" />
+              <P1>{salon.website}</P1>
+            </Info>
+            <Description>
+              {salon.description.map((text, index) => (
+                <P1 key={index} style={{ lineHeight: "var(--lh-2)" }}>
+                  {text}
+                </P1>
+              ))}
+            </Description>
+          </InfoWrapper>
+        </main>
+      </div>
     );
   } else {
     return <></>;
