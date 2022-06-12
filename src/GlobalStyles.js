@@ -31,6 +31,7 @@ export default createGlobalStyle`
 	--lh-5: 12px; 
 
 	// Padding
+	--gutter-xl: 24px;
 	--gutter-lg: 20px;
 	--gutter-md: 16px;
 	--gutter-sm: 8px;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Flex, H4, P1, P2, P3, Icon, Divider } from "../../Components";
+import { Flex, H4, P1, P2, Icon, Divider, Review } from "../../Components";
 import { StyledListItem } from "./styled";
 
 const ListItem = ({ timeSlot }) => {
@@ -33,10 +33,7 @@ const ListItem = ({ timeSlot }) => {
       <P1 bold>{timeSlot.time}</P1>
       <Flex column flex>
         <H4>{timeSlot.salon.name}</H4>
-        <Flex>
-          <div style={{ display: "flex" }}>{stars.map((star) => star)}</div>
-          <P3>(21)</P3>
-        </Flex>
+        <Review reviews={timeSlot.salon.reviews} />
         <P1>{timeSlot.salon.address.street}</P1>
       </Flex>
       <Flex style={{ textAlign: "right" }} column>

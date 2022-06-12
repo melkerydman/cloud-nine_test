@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Icon } from "../../Components";
+import { Flex, H3, Icon } from "../../Components";
 
 const SalonPage = () => {
   const [salon, setSalon] = useState({});
@@ -34,17 +34,31 @@ const SalonPage = () => {
       <header
         style={{
           height: "200px",
-          padding: "var(--gutter-md)",
-          background: "red",
+          paddingLeft: "var(--gutter-md)",
+          paddingRight: "var(--gutter-md)",
+          paddingTop: "var(--gutter-lg)",
+          paddingBottom: "var(--gutter-xl)",
+          backgroundImage: "url(/background.png)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
         }}
       >
-        <button
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          <Icon icon="chevron_left" size="24"></Icon>
-        </button>
+        <Flex style={{ justifyContent: "space-between" }}>
+          <button
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            <Icon icon="chevron_left" size="24" color="var(--clr-white)"></Icon>
+          </button>
+          <button>
+            <Icon icon="heart" size="24" color="var(--clr-white)"></Icon>
+          </button>
+        </Flex>
+        <Flex column>
+          <H3 style={{ color: "var(--clr-white)" }}>{salon.name}</H3>
+        </Flex>
       </header>
     </>
   );
