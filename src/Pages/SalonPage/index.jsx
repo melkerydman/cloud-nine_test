@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Divider, Flex, H3, Icon, P1, Review } from "../../Components";
+import { Flex, H3, Icon, P1, Review } from "../../Components";
 import {
   InfoWrapper,
   Description,
